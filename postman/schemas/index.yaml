@@ -3,7 +3,11 @@ info:
   version: '1.0.0'
   title: 'Sample API'
   description: Buy or rent spacecrafts
+servers:
+  dev:
+    url: localhost:3000
 
+defaultContentType: application/json
 paths:
   /spacecrafts/{spacecraftId}:
     parameters:
