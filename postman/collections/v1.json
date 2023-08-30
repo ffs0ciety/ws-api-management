@@ -1,0 +1,1084 @@
+{
+	"info": {
+		"_postman_id": "d2af0be3-0d7d-40bd-bf1d-653daadf67e1",
+		"name": "v1",
+		"description": "All APIs under same endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "2202158-d2af0be3-0d7d-40bd-bf1d-653daadf67e1"
+	},
+	"item": [
+		{
+			"name": "universities",
+			"item": [
+				{
+					"name": "Get list of universities",
+					"id": "51f57d9d-d841-42a0-a10d-1e09596c6fbe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/universities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"universities"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "29e48d3a-3d17-4827-8588-39eb8b3512f7",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.dev.whiesie.com/universities",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dev",
+										"whiesie",
+										"com"
+									],
+									"path": [
+										"universities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "7262d3f9-4089-402f-abcd-24a8ad58dc94"
+		},
+		{
+			"name": "travels",
+			"item": [
+				{
+					"name": "Get list of travels",
+					"id": "02c453d9-2747-43ca-b8c5-d0af2264ba97",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/travels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"travels"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a5db1333-be39-4ad3-b7e4-e5b303d848ce",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.dev.whiesie.com/travels",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dev",
+										"whiesie",
+										"com"
+									],
+									"path": [
+										"travels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "0326a522-2372-429d-9c05-22b1a6ade19d"
+		},
+		{
+			"name": "spacecrafts",
+			"item": [
+				{
+					"name": "{spacecraftId}",
+					"item": [
+						{
+							"name": "Read a spacecraft",
+							"id": "5de02eb2-ddd6-4542-99d4-cdb2a249bcad",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"spacecrafts",
+										":spacecraftId"
+									],
+									"variable": [
+										{
+											"key": "spacecraftId",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c8c445c6-4c10-4eea-a913-9736d308537b",
+									"name": "The spacecraft corresponding to the provided `spacecraftId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.dev.whiesie.com/spacecrafts/:spacecraftId",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"whiesie",
+												"com"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"probe\",\n  \"description\": \"<string>\"\n}"
+								},
+								{
+									"id": "488d29a3-00d3-4281-8f68-1088f2a758d4",
+									"name": "No spacecraft found for the provided `spacecraftId`",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "fb294d0f-dbf7-40db-b399-d20a9e6bbcaa",
+									"name": "Unexpected error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/spacecrafts/:spacecraftId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"spacecrafts",
+												":spacecraftId"
+											],
+											"variable": [
+												{
+													"key": "spacecraftId"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "cafb0d12-91f9-4659-baf4-7886fc98f462"
+				}
+			],
+			"id": "1715ffad-984d-4104-8f36-72c1ea8a42cc"
+		},
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "signup",
+					"item": [
+						{
+							"name": "singup",
+							"id": "da517d00-bc5f-4a4d-9b8e-aeda915c7459",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"raulmsanchez7@gmail.com\",\n  \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/oauth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"oauth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ca3ae7fd-eeb4-4d4c-a5db-8eecb03ca2f4",
+									"name": "Ok",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.dev.whiesie.com/oauth/signup",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"whiesie",
+												"com"
+											],
+											"path": [
+												"oauth",
+												"signup"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "a80c7c7b-1c4e-483c-959a-76d5f3812878"
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e91184dd-95d6-46d3-8c7e-6c29ee21282e",
+										"exec": [
+											"var res = pm.response.json();",
+											"var accessToken = res.AuthenticationResult.AccessToken;",
+											"var idToken = res.AuthenticationResult.IdToken;",
+											"var refreshToken = res.AuthenticationResult.RefreshToken;",
+											"pm.environment.set(\"accessToken\", accessToken);",
+											"pm.environment.set(\"idToken\", idToken);",
+											"pm.environment.set(\"refreshToken\", refreshToken);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8f8fa991-2c66-4c05-9314-44b9274867b1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"raulmsanchez@gmail.com\",\n  \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/oauth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"oauth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "9c09c167-fa8d-499c-927d-62a70de822b5",
+									"name": "Ok",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.dev.whiesie.com/oauth/login",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"whiesie",
+												"com"
+											],
+											"path": [
+												"oauth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "452a0fa0-e558-42e0-ae0f-b7fdeffa4ac9"
+				},
+				{
+					"name": "logout",
+					"item": [
+						{
+							"name": "global",
+							"item": [
+								{
+									"name": "Global Logout",
+									"id": "cdd56fff-890e-431e-b914-7f9818f8f622",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/oauth/logout/global",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"oauth",
+												"logout",
+												"global"
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "dcb79955-2c0b-403b-ac91-3652e094ee04",
+											"name": "Ok",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://api.dev.whiesie.com/oauth/login",
+													"protocol": "https",
+													"host": [
+														"api",
+														"dev",
+														"whiesie",
+														"com"
+													],
+													"path": [
+														"oauth",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": []
+										}
+									]
+								}
+							],
+							"id": "3b01df1f-a6b6-46ce-87f0-e203a1dd55e5"
+						},
+						{
+							"name": "Logout",
+							"id": "f1df3116-7a3a-4261-a97e-06ff956adf0e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refreshtoken\": \"{{refreshToken}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/oauth/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"oauth",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "047054e2-07f1-4ad8-a3a7-dc1346d88a98",
+									"name": "Ok",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.dev.whiesie.com/oauth/login",
+											"protocol": "https",
+											"host": [
+												"api",
+												"dev",
+												"whiesie",
+												"com"
+											],
+											"path": [
+												"oauth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "b7e7f844-af28-4a28-a38d-83dfacf01412"
+				}
+			],
+			"id": "8355cbdb-235e-4930-9f30-71e8961bf43a"
+		},
+		{
+			"name": "management",
+			"item": [
+				{
+					"name": "Get list of management request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e9f3e30-7874-4aa0-8118-a028377be262",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "b7a0b6a8-35a4-47e4-91a7-c35eac65327f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/management",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"management"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f1af71b3-1467-4229-bed2-572c1eef2dc8",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.dev.whiesie.com/management",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dev",
+										"whiesie",
+										"com"
+									],
+									"path": [
+										"management"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				},
+				{
+					"name": "Create new request",
+					"id": "43dee01f-10f6-4836-b598-07113d8dc296",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJRVUVuMzRRc1FuU0hcL2ZlU21qK2ZKOUJhR1BpUjJqcTNVOThTMUJ6K3dGND0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibVp4MC1MWjZ6SC1qcDZabTlxQmg1USIsInN1YiI6IjgwMGU3MjlhLWE4YTItNDVhMy05OGU1LWM4YjI1MmJiZjMzOSIsImNvZ25pdG86Z3JvdXBzIjpbImV1LXdlc3QtMV9UV29lbWFDaVFfR29vZ2xlIl0sImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfVFdvZW1hQ2lRIiwiY29nbml0bzp1c2VybmFtZSI6Ikdvb2dsZV8xMDc3NTEyMjIzNDE2NzkwMDAzNDEiLCJub25jZSI6IkJydGtiQWpQZ01LU3FDdjdsdXVaWlR0Yl80Y0ozN1NsZ1AtX1dRMDdGVzFkbTROXzRFa3pRbDlweEc4U2k1TldIbXVicXRQb0hFekZMT3NXY204VGF2cXlkMU5CWU9JOTlvTVQwMEtsQXY0OGR6QzB6bkRSMUFORTg3WnBnQVdOSll0SnQxRE1pVjlZd0NZbEtkX3FKVnlvLWlLMGJKbWdtckhmYjF6dHg2USIsImF1ZCI6IjYzaXQwaDRhazg3MzFkZ2QycGdubzAyM245IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoiMTA3NzUxMjIyMzQxNjc5MDAwMzQxIiwicHJvdmlkZXJOYW1lIjoiR29vZ2xlIiwicHJvdmlkZXJUeXBlIjoiR29vZ2xlIiwiaXNzdWVyIjpudWxsLCJwcmltYXJ5IjoidHJ1ZSIsImRhdGVDcmVhdGVkIjoiMTY4NTMwNTkwODk1MCJ9XSwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2ODU5MTMwMTksImV4cCI6MTY4NTkxNjYxOSwiaWF0IjoxNjg1OTEzMDE5LCJqdGkiOiJlMTliMmZiZC1hZTY0LTQ3MTItYWY4YS01ZTUwMjRkZGE0NDUiLCJlbWFpbCI6InJhdWxtc2FuY2hlejdAZ21haWwuY29tIn0.lmeokS97YrSOA6iGp6dPFm4o1vBgP_l5PnLYKUJpkucCoBYr3KbtazHbHJnJHdht2mP1xLMWloyxi0C2_rqHcZXycVIIzzvAZ_SHVJi5VU4xnrBwQZdExTcxsXwSmrwe8pUctBiKsqt1E-vArmvJ3enTZ6rJqJx6gUz-0GHjTCxSEH08iqw1Pe5vbeBl1KPGMRPcaA0UOod2YdJmBdhFxOr2CH4x3kV00ef41zQtAXFH7KiDcppVCIlClYpp-P3gVt6u5ElllWbSYZq3x924Oc-SxYd9YLRUTmWsVG0wj0eib0QK92bDFWZOB7ARMZg-h03UrqsAhVN5k-1b93F0Kw"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/management",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"management"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "666d9ce0-b5bb-4a29-959c-40b4bf91912f",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.dev.whiesie.com/management",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dev",
+										"whiesie",
+										"com"
+									],
+									"path": [
+										"management"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				},
+				{
+					"name": "Create new request",
+					"id": "adf6f01f-6e8d-444c-93b8-0410d92574ec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJRVUVuMzRRc1FuU0hcL2ZlU21qK2ZKOUJhR1BpUjJqcTNVOThTMUJ6K3dGND0iLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoibVp4MC1MWjZ6SC1qcDZabTlxQmg1USIsInN1YiI6IjgwMGU3MjlhLWE4YTItNDVhMy05OGU1LWM4YjI1MmJiZjMzOSIsImNvZ25pdG86Z3JvdXBzIjpbImV1LXdlc3QtMV9UV29lbWFDaVFfR29vZ2xlIl0sImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfVFdvZW1hQ2lRIiwiY29nbml0bzp1c2VybmFtZSI6Ikdvb2dsZV8xMDc3NTEyMjIzNDE2NzkwMDAzNDEiLCJub25jZSI6IkJydGtiQWpQZ01LU3FDdjdsdXVaWlR0Yl80Y0ozN1NsZ1AtX1dRMDdGVzFkbTROXzRFa3pRbDlweEc4U2k1TldIbXVicXRQb0hFekZMT3NXY204VGF2cXlkMU5CWU9JOTlvTVQwMEtsQXY0OGR6QzB6bkRSMUFORTg3WnBnQVdOSll0SnQxRE1pVjlZd0NZbEtkX3FKVnlvLWlLMGJKbWdtckhmYjF6dHg2USIsImF1ZCI6IjYzaXQwaDRhazg3MzFkZ2QycGdubzAyM245IiwiaWRlbnRpdGllcyI6W3sidXNlcklkIjoiMTA3NzUxMjIyMzQxNjc5MDAwMzQxIiwicHJvdmlkZXJOYW1lIjoiR29vZ2xlIiwicHJvdmlkZXJUeXBlIjoiR29vZ2xlIiwiaXNzdWVyIjpudWxsLCJwcmltYXJ5IjoidHJ1ZSIsImRhdGVDcmVhdGVkIjoiMTY4NTMwNTkwODk1MCJ9XSwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2ODU5MTMwMTksImV4cCI6MTY4NTkxNjYxOSwiaWF0IjoxNjg1OTEzMDE5LCJqdGkiOiJlMTliMmZiZC1hZTY0LTQ3MTItYWY4YS01ZTUwMjRkZGE0NDUiLCJlbWFpbCI6InJhdWxtc2FuY2hlejdAZ21haWwuY29tIn0.lmeokS97YrSOA6iGp6dPFm4o1vBgP_l5PnLYKUJpkucCoBYr3KbtazHbHJnJHdht2mP1xLMWloyxi0C2_rqHcZXycVIIzzvAZ_SHVJi5VU4xnrBwQZdExTcxsXwSmrwe8pUctBiKsqt1E-vArmvJ3enTZ6rJqJx6gUz-0GHjTCxSEH08iqw1Pe5vbeBl1KPGMRPcaA0UOod2YdJmBdhFxOr2CH4x3kV00ef41zQtAXFH7KiDcppVCIlClYpp-P3gVt6u5ElllWbSYZq3x924Oc-SxYd9YLRUTmWsVG0wj0eib0QK92bDFWZOB7ARMZg-h03UrqsAhVN5k-1b93F0Kw"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/management",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"management"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2f739754-d882-4c4e-8c49-7048488089d2",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/management",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "fd11816c-5685-462c-a06b-9f0b402a6b40"
+		},
+		{
+			"name": "countries",
+			"item": [
+				{
+					"name": "Get list of countries",
+					"id": "09c4ca2b-8144-4a2d-a5bd-2ccb1c1bdd0f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/countries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d16dae39-6667-423a-b062-95301960bf8e",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/countries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"countries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "165d753e-c260-4b4e-b2b5-dceb1294a811"
+		},
+		{
+			"name": "test2",
+			"item": [
+				{
+					"name": "Get list of countries",
+					"id": "20d4bc08-24db-4a30-8922-b5c43590440c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/countries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a24a12e2-edc4-4d4d-80e8-ef1dde152994",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/countries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"countries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "42a68d57-5a13-413b-9943-9b7ed1c10039"
+		},
+		{
+			"name": "cities",
+			"item": [
+				{
+					"name": "{cityId}",
+					"item": [
+						{
+							"name": "Get list of cities",
+							"id": "bca2eec6-3d15-4a79-b31e-39cd61f2101b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities/:cityId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities",
+										":cityId"
+									],
+									"variable": [
+										{
+											"key": "cityId",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c141265f-cd3a-462a-aed1-b48da8a0169d",
+									"name": "Ok",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cities/:cityId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cities",
+												":cityId"
+											],
+											"variable": [
+												{
+													"key": "cityId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": []
+								}
+							]
+						}
+					],
+					"id": "c93c306e-b65d-46ec-9aa1-772faa636852"
+				},
+				{
+					"name": "Get list of cities",
+					"id": "e63665bb-2545-413e-a84f-fc57d9444f89",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "44faa1b8-5d07-4f0f-8f9e-bc9ca4e06f67",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cities",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "3417bee1-cb40-4ef9-b51f-caf089c6319b"
+		},
+		{
+			"name": "activities",
+			"item": [
+				{
+					"name": "Get list of activities.",
+					"id": "ceee5175-b4c1-4f7d-a2c7-a0c6ed871233",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/activities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"activities"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "990bd78a-d4d0-40d8-b3f5-4d6e4add84a3",
+							"name": "Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/activities",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"activities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": []
+						}
+					]
+				}
+			],
+			"id": "db6b232c-93f4-468f-9dae-913e8fffbbb8"
+		}
+	],
+	"variable": [
+		{
+			"id": "aabb636b-660e-44aa-bfda-d90a1101db1f",
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "any"
+		}
+	]
+}
